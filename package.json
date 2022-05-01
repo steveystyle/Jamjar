@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/steveystyle/Jamjar/issues"
   },
-  "homepage": "https://github.com/steveystyle/Jamjar#readme"
+  "homepage": "https://github.com/steveystyle/Jamjar#readme",
+  "dependencies": {
+    "express": "4.18.1",
+    "nedb": "1.8.0"
+  }
 }
