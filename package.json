@@ -1,0 +1,19 @@
+{
+  "name": "jamjar",
+  "version": "1.0.0",
+  "description": "Awebsite for the resturant jamjar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steveystyle/Jamjar.git"
+  },
+  "author": "Steven Crawford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steveystyle/Jamjar/issues"
+  },
+  "homepage": "https://github.com/steveystyle/Jamjar#readme"
+}
