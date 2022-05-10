@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="/css/homecss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid home-main-container">
+            <div class="logo-container">
+                <img src="/img/jjLogo.png" loading="eager" width="100" height="100" alt="Business Logo">
+            </div>
+            <h1 class="welcome-neon">
+                WELCOME
+            </h1>
+            <div class="phone-layout">
+                <i class="bi bi-phone phone-number"></i>
+                <a class="phone-number" href="tel:01418480898" id="JJPhoneNumber">0141 848 0898</a>
+            </div>
+            <div class="two-column-layout">
+                <div class="column">
+                    <div class="lc-section">
+                        <h1 class="lc-text">
+                            Where to find us
+                        </h1>
+                        <address class="lc-text">
+                            16 Shuttle Street<br>Paisley<br>Pa1 1YD
+                        </address>
+                    </div>
+
+
+                    <div class="lc-section">
+                        <h1 class="lc-text">
+                            Opening times
+                        </h1>
+                        <div class="lc-text">
+                            SUN - THURS<br>12:00 - 20:00<br>FRI - SAT<br>12:00 - 21:00
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    {{>map}}
+                </div>
+            </div>
+        </div>
+        {{>mobilenav}}
+    </main>
+    {{>footer}}
+    {{>scripts}}
+</body>
+
+</html>

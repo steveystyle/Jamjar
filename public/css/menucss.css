@@ -1,0 +1,9 @@
+.main{
+    width: 100%;
+    height: 95%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(120, 47, 127, 0.5), rgba(120, 47, 127, 0.5)), url(/img/jjLandBackground.jpg);
+    background-position: 0px 0px, 50% 50%;
+    background-size: auto, cover;
+}

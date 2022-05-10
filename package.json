@@ -17,7 +17,15 @@
   },
   "homepage": "https://github.com/steveystyle/Jamjar#readme",
   "dependencies": {
+    "bootstrap": "5.1.3",
+    "bootstrap-icons": "1.8.1",
     "express": "4.18.1",
-    "nedb": "1.8.0"
+    "google_directions": "0.6.0",
+    "googlemaps": "1.12.0",
+    "handlebars": "4.7.7",
+    "jquery": "3.6.0",
+    "mustache-express": "1.3.2",
+    "nedb": "1.8.0",
+    "nodemon": "2.0.16"
   }
 }

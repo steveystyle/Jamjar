@@ -1,0 +1,192 @@
+.emboss:active {
+    border: 0;
+    box-shadow: none;
+}
+
+.nav__toggle {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    right: 15px;
+    bottom: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.15s linear;
+    background: #EA5548;
+}
+
+.nav__toggle:hover,
+.nav__toggle:focus {
+    background: #b14137;
+}
+
+.menuicon {
+    display: block;
+    cursor: pointer;
+    color: white;
+    transform: rotate(0deg);
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menuicon__bar,
+.menuicon__circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.menuicon__bar {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-in-out;
+}
+
+.menuicon__circle {
+    transition: stroke-dashoffset 0.3s linear 0.1s;
+    stroke-dashoffset: 144.513262038;
+    stroke-dasharray: 144.513262038;
+}
+
+.nav--clicked .menuicon {
+    color: white;
+    transform: rotate(180deg);
+}
+
+.nav--clicked .menuicon__circle {
+    stroke-dashoffset: 0;
+}
+
+.nav--clicked .menuicon__bar:nth-child(1),
+.nav--clicked .menuicon__bar:nth-child(4) {
+    opacity: 0;
+}
+
+.nav--clicked .menuicon__bar:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.nav--clicked .menuicon__bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.nav--clicked {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    background: #EA5548;
+}
+
+.nav-pane {
+    display: none;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 70px;
+    left: 100%;
+    height: 3%;
+    width: fit-content;
+    background: #EA5548;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    transform: translateX(100%);
+    transition: height 0.2s cubic-bezier(0, 1, 0.8, 1), transform 0.3s cubic-bezier(0, 1, 0.8, 1) 0.3s;
+    overflow-y: hidden;
+}
+
+.nav--open {
+    transform: translateX(-100%);
+    height: 40%;
+    transition: transform 0.3s cubic-bezier(0, 1, 0, 1.5), height 0.2s cubic-bezier(0, 1, 0.8, 1) 0.3s;
+}
+
+.mob-nav-link {
+    display: flex;
+    color: rgba(255, 255, 255, 0.9);
+    word-wrap: normal;
+    text-decoration: none;
+    border-radius: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    flex: 1 1 0;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.nav-pane .mob-nav-link:nth-child(1) {
+    transition: transform 0.2s;
+    transform: translateY(400%);
+    visibility: visible;
+}
+
+.nav--open .mob-nav-link {
+    visibility: visible;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2), inset 0 -2px 3px rgba(0, 0, 0, 0.1), 0 0.5px 1px rgba(255, 255, 255, 0.1);
+}
+
+.nav--open .mob-nav-link:nth-child(1) {
+    transition: transform 0.2s 0.4s;
+    transform: translateY(0%);
+    animation: mobLinkBg 0.45s 0.3s normal;
+}
+
+.nav--open .mob-nav-link:nth-child(2) {
+    transition: visibility 0s 0.7s;
+    animation: mobLinkBg 0.15s 0.7s normal;
+}
+
+.nav--open .mob-nav-link:nth-child(3) {
+    transition: visibility 0s 0.8s;
+    animation: mobLinkBg 0.15s 0.8s normal;
+}
+
+.nav--open .mob-nav-link:nth-child(4) {
+    transition: visibility 0s 0.9s;
+    animation: mobLinkBg 0.15s 0.9s normal;
+}
+
+.nav--open .mob-nav-link:nth-child(5) {
+    transition: visibility 0s 1s;
+    animation: mobLinkBg 0.15s 1.0s normal;
+}
+
+.active,
+.mob-nav-link:hover {
+    color: rgb(180, 160, 182);
+}
+
+.mob-nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav--open .mob-nav-link:active{
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 -1px 3px rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 575px) {
+    .nav__toggle {
+        display: inline-block;
+    }
+
+    .nav-pane {
+        display: flex;
+    }
+}
+
+@keyframes mobLinkBg {
+    from {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}

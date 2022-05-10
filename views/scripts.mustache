@@ -1,0 +1,23 @@
+<script>
+    document.addEventListener('readystatechange', () => {
+        let curPage = document.getElementById('nav{{activelink}}');
+        //set logic if not hidden
+        curPage.classList.add("active", "link-animation");
+        curPage.ariaCurrent = "page";
+    });
+</script>
+<script>
+    let curPage = document.getElementById('mobilenav{{activelink}}');
+    const menuToggle = document.querySelector('.nav__toggle');
+    const navPane = document.querySelector('.nav-pane');
+    let isMenuOpen = false;
+    menuToggle.addEventListener('click', e => {
+        e.preventDefault();
+        isMenuOpen = !isMenuOpen;
+        menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+        navPane.setAttribute('aria-expanded', String(isMenuOpen));
+        menuToggle.classList.toggle('nav--clicked');
+        navPane.classList.toggle('nav--open');
+        curPage.classList.add("active");
+    });
+</script>
