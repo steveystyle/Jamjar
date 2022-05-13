@@ -1,6 +1,96 @@
-.emboss:active {
-    border: 0;
-    box-shadow: none;
+@font-face {
+    font-family: "Cooper";
+    src: url("/css/Cooper Std Black.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    display: block;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    height: inherit;
+    width: inherit;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-image: url(/img/JJPPBackground.jpg);
+    background-position: 50% 0%;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+main {
+    width: inherit;
+    height: 95%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(120, 47, 127, 0.5), rgba(120, 47, 127, 0.5)), url(/img/jjLandBackground.jpg);
+    background-position: 0px 0px, 50% 50%;
+    background-size: cover;
+}
+
+.vertical-spacer {
+    width: 3px;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    word-wrap: normal;
+    font-family: Cooper;
+}
+
+.link-animation {
+    animation: rotateNav 1s;
+    animation-timing-function: cubic-bezier(1, -1, 0.5, 1);
+}
+
+.active,
+.nav-link:hover {
+    color: rgb(180, 160, 182);
+}
+
+.navbar {
+    z-index: 1;
+    background-color: rgb(120, 47, 127, 0.6);
+    height: inherit;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.jj-nav-group {
+    display: flex;
+    height: inherit;
+    justify-content: space-around;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-container {
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#mNav {
+    display: none;
 }
 
 .nav__toggle {
@@ -105,6 +195,7 @@
 }
 
 .mob-nav-link {
+    font-family: Cooper;
     display: flex;
     color: rgba(255, 255, 255, 0.9);
     word-wrap: normal;
@@ -126,7 +217,7 @@
 
 .nav--open .mob-nav-link {
     visibility: visible;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid #EA5548;
     box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2), inset 0 -2px 3px rgba(0, 0, 0, 0.1), 0 0.5px 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -165,10 +256,10 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.nav--open .mob-nav-link:active{
+.nav--open .mob-nav-link:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 -1px 3px rgba(255, 255, 255, 0.3);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: rgb(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgb(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 575px) {
@@ -179,6 +270,18 @@
     .nav-pane {
         display: flex;
     }
+
+    #mNav {
+        display: contents;
+    }
+
+    footer {
+        display: none;
+    }
+
+    main {
+        height: 100%;
+    }
 }
 
 @keyframes mobLinkBg {
@@ -188,5 +291,15 @@
 
     to {
         background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes rotateNav {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
     }
 }

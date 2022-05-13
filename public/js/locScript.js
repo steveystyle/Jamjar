@@ -1,6 +1,13 @@
 function initMap() {
     //logic gate for geolocation
     if ("geolocation" in navigator) {
+
+        var watchId = navigator.geolocation.watchPosition(function (position) {
+            document.getElementById('currentLat').innerHTML = position.coords.latitude;
+            document.getElementById('currentLon').innerHTML = position.coords.longitude;
+          });
+
+          
         //setting current position options
         let options = {
             enableHighAccuracy: true,

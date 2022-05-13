@@ -1,12 +1,21 @@
 <script>
+
+//set logic if not hidden
+
+
     document.addEventListener('readystatechange', () => {
         let curPage = document.getElementById('nav{{activelink}}');
-        //set logic if not hidden
+        
         curPage.classList.add("active", "link-animation");
         curPage.ariaCurrent = "page";
     });
 </script>
 <script>
+
+
+//set logic if not hidden
+
+
     let curPage = document.getElementById('mobilenav{{activelink}}');
     const menuToggle = document.querySelector('.nav__toggle');
     const navPane = document.querySelector('.nav-pane');
